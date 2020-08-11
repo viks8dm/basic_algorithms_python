@@ -9,8 +9,11 @@ Implement HTTP router using a Trie.
 
 ### Implementation
 
-All operations use simple tree-traversal approach.
+* All operations use simple tree-traversal approach.
+* Search, insert, split & lookup operations use Trie data structure
 
 ### Efficiency
 
-Time efficiency is O(n) at most since a find operation traverses through the entire data-set.
+* Time complexity is O(n), since in worst case senario, search and insert operations take time equal to length of url being searched for.
+
+* Space complexity is also O(n), since full length of path to be search for will have to be traversed.

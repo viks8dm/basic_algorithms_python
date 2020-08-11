@@ -12,11 +12,11 @@ To do:
 
 ### Implementation
 
-The implementation is based on divide and conquer strategy where unsorted array is recursively divided into left and right parts around the mid-element, till one or two elements remain in the array, in which case determination of minimum or maximum is done using one comparison operation at most.
+* The implementation is based on defining min-val and max-val variables, setting them to equal 1st element of the input list and then comparing with all other elements within a for loop.
+* If min-val is greater than any test-element in the for loop, the min-val is set to that element's value.
+* If max-val is less than any test-element within the for-loop, then max-val is set to that element's value.
 
 ### Efficiency
 
-* Time efficiency is O(n) since for any length n array:
-    * one part takes T(floor(n/2))
-    * second part will take T(ceil(n/2))
-    * additional 2 comparison operations will have to be performed
+* Tiem complexity is O(n) since entire input list is checed within the for-loop setting
+* Space complexity is O(1) since no extra space is used

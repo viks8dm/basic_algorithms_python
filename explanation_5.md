@@ -12,5 +12,7 @@ All operations, namely, insert, find, search, are based on single character matc
 
 ### Efficiency
 
-* Time complexity is O(n), since for insert or find operations potentially entire tree has to be traversed and previous characters need to be stored temporarily
-* Space complexity is O(1)
+* Worst case time complexity is O(n*m), for insert and find operations, where n is number of words and m is length of a word. This is derived from the corresponding implementations where insert and find operations look at each word in the dictionary and every character in the "word-tree" is traversed.
+    * the suffixes() function has order O(k)*O(l), where k is length of all suffices and l is lenght of words, since each character in suffix and each word is compared
+
+* Worst case space complexity for insert operation is O(n) where n is number of words

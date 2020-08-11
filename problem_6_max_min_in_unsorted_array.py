@@ -3,24 +3,38 @@ find smallest and largest integer from a given unsorted array
 The code should run in O(n) time. 
 Do not use Python's inbuilt functions to find min and max.
 """
-#############
-def get_min_max_recursive(arr, l, r):
-    if (l==r):
-        return (arr[l], arr[l])
+# #############
+# def get_min_max_recursive(arr, l, r):
+#     if (l==r):
+#         return (arr[l], arr[l])
     
-    if l + 1 == r:
-        if arr[l] <= arr[r]:
-            return (arr[l], arr[r])
-        return (arr[r], arr[l])
+#     if l + 1 == r:
+#         if arr[l] <= arr[r]:
+#             return (arr[l], arr[r])
+#         return (arr[r], arr[l])
 
-    mid = (l + r) // 2
-    (l_min, l_max) = get_min_max_recursive(arr, l, mid)
-    (r_min, r_max) = get_min_max_recursive(arr, mid+1, r)
+#     mid = (l + r) // 2
+#     (l_min, l_max) = get_min_max_recursive(arr, l, mid)
+#     (r_min, r_max) = get_min_max_recursive(arr, mid+1, r)
 
-    n_min = l_min if (l_min<=r_min) else r_min
-    n_max = l_max if (l_max>=r_max) else r_max
+#     n_min = l_min if (l_min<=r_min) else r_min
+#     n_max = l_max if (l_max>=r_max) else r_max
     
-    return (n_min, n_max)
+#     return (n_min, n_max)
+
+# #############
+# def get_min_max(ints):
+#     """
+#     Return a tuple(min, max) out of list of unsorted integers.
+
+#     Args:
+#        ints(list): list of integers containing one or more integers
+#     """
+#     # corner cases
+#     if len(ints) == 0:
+#         return (None, None)
+    
+#     return get_min_max_recursive(ints, 0, len(ints)-1)
 
 #############
 def get_min_max(ints):
@@ -30,11 +44,18 @@ def get_min_max(ints):
     Args:
        ints(list): list of integers containing one or more integers
     """
-    # corner cases
     if len(ints) == 0:
         return (None, None)
-    
-    return get_min_max_recursive(ints, 0, len(ints)-1)
+
+    min_val, max_val = ints[0], ints[0]
+
+    for i in ints:
+        if (i<min_val):
+            min_val = i
+        elif (i>max_val):
+            max_val = i
+
+    return (min_val, max_val)
 
 #############
 if __name__=="__main__":

@@ -20,4 +20,4 @@ Input: nums = [4,5,6,7,0,1,2], target = 0, Output: 4
 ### Efficiency
 
 * time efficiency is same as that of binary search, O(log-n)
-* space efficiency is O(1) as no extra storage is used
+* space efficiency is O(log-n)

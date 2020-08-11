@@ -8,7 +8,7 @@
 
 ### Implementation
 
-All operations, namely, insert, find, search, are based on single character match based tree traversal from top (root) to down.
+All operations, namely, insert, find, search, are based on single character match via tree traversal from top (root) to down.
 
 ### Efficiency
 
